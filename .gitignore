@@ -1,0 +1,3 @@
+# Project exclude paths
+/first-config-client/target/
+/first-config-server/target/

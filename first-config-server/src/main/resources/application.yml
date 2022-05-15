@@ -1,0 +1,32 @@
+server:
+  port: 8888
+management:
+  security:
+    enabled: false
+#encrypt:
+#  key: angus
+encrypt:
+  keyStore:
+    location: classpath:/crazyit.keystore  # keystroe位置
+    password: crazyit                   # 密钥库的密码
+    alias: crazyitKey                       # 密钥对的别名
+    secret: crazyit                       # 密钥口令
+spring:
+  profiles:
+    active: subversion
+  cloud:
+    config:
+      server:
+        svn:
+          uri: https://localhost/svn/config-project
+          username: admin
+          password: 123456
+        default-label: test-label
+        health:
+          repositories:
+            test-service:
+              label: health-test
+security:
+  user:
+    name: root
+    password: crazyit
